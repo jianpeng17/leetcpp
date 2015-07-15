@@ -68,6 +68,43 @@ class Solution {
     }
 };
 */
+
+/*
+void reverse(int *nums , int begin , int end){
+int tmp;
+while(begin<end){
+    tmp=nums[begin];
+    nums[begin]=nums[end];
+    nums[end]=tmp;
+    begin++;
+    end--;
+}
+}
+
+void rotate(int* nums, int numsSize, int k) 
+{
+if(k==0 || k==numsSize)
+    return;
+if(numsSize==0 )
+  return;
+
+reverse(nums,0,numsSize-1);
+7,6,5,4,3,2,1
+if(k>numsSize)
+    k=k%numsSize;
+if(numsSize-k!=0){
+
+
+reverse(nums,0,k-1);
+5,6,7,4,3,2,1
+reverse(nums,k,numsSize-1);   
+5,6,7,1,2,3,4
+}
+
+}
+
+*/
+
 int main()
 {
     int a[]={1,2,3,4,5};
