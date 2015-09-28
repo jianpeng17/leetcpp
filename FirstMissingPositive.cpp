@@ -2,6 +2,7 @@
 #include <map>
 #include <vector>
 #include <stack>
+#include <bitset>
 #include <queue>
 #include <algorithm>
 #include <string.h>
@@ -20,18 +21,6 @@ Your algorithm should run in O(n) time and uses constant space.
 using namespace std;
 
 
-struct ListNode {
- int val;
- ListNode *next;
- ListNode(int x) : val(x), next(NULL) {}
-};
-
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
 
 int firstMissingPositive(int A[], int n) {
     int arr[n];
@@ -56,6 +45,25 @@ int firstMissingPositive(int A[], int n) {
     }
     return n+1;
 }
+
+class Solution {
+public:
+    int firstMissingPositive(vector<int>& nums) {
+        const int n = nums.size();
+        bitset<n> bs; //  not initialized with a constant expression|
+        for(int i=0; i<n; i++)
+        {
+            if(nums[i]>0 && nums[i]<=n)
+            bs.set(nums[i]-1);
+        }
+        for(int i=0; i<n; i++)
+        {
+            if(bs[i] == false)
+                return i+1;
+        }
+        return n+1;
+    }
+};
 
 //#define test(a[])
 
