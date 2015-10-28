@@ -56,7 +56,7 @@ public:
         invert(root);
         return root;
     }
-    void invert(TreeNode* root)
+    void invert(TreeNode* root) // 这是自顶向下地revert
     {
         TreeNode* tmp = root->left;
         root->left = root->right;
